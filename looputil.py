@@ -109,7 +109,8 @@ class Domain(object):
                                       self.domain,
                                       name)
         if reply in (['BAD_INDATA'],
-                     ['RATE_LIMITED']):
+                     ['RATE_LIMITED'],
+                     ['AUTH_ERROR']):
             raise Exception("RPC returned error: " + reply[0])
         return reply
 
